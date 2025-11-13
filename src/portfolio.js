@@ -34,7 +34,8 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/anirudh-s97",
-  linkedin: "https://www.linkedin.com/in/anirudh-rajhgopalann-srinivaasrajagopal-4a530a307/",
+  linkedin:
+    "https://www.linkedin.com/in/anirudh-rajhgopalann-srinivaasrajagopal-4a530a307/",
   gmail: "asrin101@asu.edu",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
@@ -45,12 +46,15 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "DATA SCIENTIST & ML ENGINEER WHO LOVES TO BUILD AI-POWERED SOLUTIONS",
+  subTitle:
+    "DATA SCIENTIST & ML ENGINEER WHO LOVES TO BUILD AI-POWERED SOLUTIONS",
   skills: [
     emoji(
       "⚡ Build and deploy advanced Machine Learning models for real-world applications"
     ),
-    emoji("⚡ Develop Computer Vision and NLP solutions using state-of-the-art models"),
+    emoji(
+      "⚡ Develop Computer Vision and NLP solutions using state-of-the-art models"
+    ),
     emoji(
       "⚡ Create Generative AI applications leveraging LLMs, RAG systems, and AI Agents"
     ),
@@ -229,7 +233,8 @@ const bigProjects = {
     {
       image: require("./assets/images/saayaHealthLogo.webp"), // Using existing placeholder image
       projectName: "Intelligent File Management & Task Automation Agent",
-      projectDesc: "Engineered an intelligent file management system using Google's Gemini 2.0 with three-stage architecture (LLM Engine, Task Scheduler, AI Agents) for automated file processing via natural language",
+      projectDesc:
+        "Engineered an intelligent file management system using Google's Gemini 2.0 with three-stage architecture (LLM Engine, Task Scheduler, AI Agents) for automated file processing via natural language",
       footerLink: [
         {
           name: "View Project",
@@ -240,7 +245,8 @@ const bigProjects = {
     {
       image: require("./assets/images/nextuLogo.webp"), // Using existing placeholder image
       projectName: "Hindi BPE Tokenizer - Hugging Face Space",
-      projectDesc: "Built a GPT-2 like tokenizer from scratch using Byte Pair Encoding with 5k vocabulary for Hindi, handling boundary cases. Launched interactive Hugging Face Space with Gradio",
+      projectDesc:
+        "Built a GPT-2 like tokenizer from scratch using Byte Pair Encoding with 5k vocabulary for Hindi, handling boundary cases. Launched interactive Hugging Face Space with Gradio",
       footerLink: [
         {
           name: "View on HuggingFace",
@@ -281,16 +287,14 @@ const achievementSection = {
 
 const blogSection = {
   title: "Blog",
-  subtitle:
-    "I write about Machine Learning, AI, and my technical journey",
+  subtitle: "I write about Machine Learning, AI, and my technical journey",
   displayMediumBlogs: "false", // Disabled Medium blogs
   blogs: [
     {
       url: "https://anirudh-s97.github.io/blog/post-1", // Replace with your actual GitHub Pages blog URL
       title: "Your Blog Post Title",
-      description:
-        "Description of your blog post"
-    },
+      description: "Description of your blog post"
+    }
     // Add more blog posts as you create them
   ],
   display: true // Set to false if you don't have a blog yet
@@ -300,9 +304,7 @@ const blogSection = {
 
 const talkSection = {
   title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY KNOWLEDGE AND EXPERIENCES"
-  ),
+  subtitle: emoji("I LOVE TO SHARE MY KNOWLEDGE AND EXPERIENCES"),
 
   talks: [
     // Add your talks here when you have them
