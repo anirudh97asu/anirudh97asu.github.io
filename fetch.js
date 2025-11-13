@@ -2,12 +2,10 @@ fs = require("fs");
 const https = require("https");
 process = require("process");
 require("dotenv").config();
-
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
-
 const ERR = {
   noUserName:
     "Github Username was found to be undefined. Please set all relevant environment variables.",
@@ -20,7 +18,6 @@ if (USE_GITHUB_DATA === "true") {
   if (GITHUB_USERNAME === undefined) {
     throw new Error(ERR.noUserName);
   }
-
   console.log(`Fetching profile data for ${GITHUB_USERNAME}`);
   var data = JSON.stringify({
     query: `
@@ -66,15 +63,12 @@ if (USE_GITHUB_DATA === "true") {
       "User-Agent": "Node"
     }
   };
-
   const req = https.request(default_options, res => {
     let data = "";
-
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
       throw new Error(ERR.requestFailed);
     }
-
     res.on("data", d => {
       data += d;
     });
@@ -85,16 +79,13 @@ if (USE_GITHUB_DATA === "true") {
       });
     });
   });
-
   req.on("error", error => {
     throw error;
   });
-
   req.write(data);
   req.end();
 }
-
-if (MEDIUM_USERNAME !== undefined) {
+if (MEDIUM_USERNAME !== undefined && MEDIUM_USERNAME !== "") {
   console.log(`Fetching Medium blogs data for ${MEDIUM_USERNAME}`);
   const options = {
     hostname: "api.rss2json.com",
@@ -102,15 +93,17 @@ if (MEDIUM_USERNAME !== undefined) {
     port: 443,
     method: "GET"
   };
-
   const req = https.request(options, res => {
     let mediumData = "";
-
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      // Changed: Just log warning instead of throwing error
+      console.warn(
+        `Warning: ${ERR.requestFailedMedium} (Status: ${res.statusCode})`
+      );
+      console.log("Continuing build without Medium blogs...");
+      return; // Exit gracefully instead of throwing
     }
-
     res.on("data", d => {
       mediumData += d;
     });
@@ -121,10 +114,12 @@ if (MEDIUM_USERNAME !== undefined) {
       });
     });
   });
-
   req.on("error", error => {
-    throw error;
+    // Changed: Log error instead of throwing
+    console.warn(`Warning: Medium fetch failed with error:`, error.message);
+    console.log("Continuing build without Medium blogs...");
   });
-
   req.end();
+} else {
+  console.log("Skipping Medium blogs fetch (no username provided)");
 }
