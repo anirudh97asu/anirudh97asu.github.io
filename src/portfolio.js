@@ -298,7 +298,7 @@ const blogSection = {
     }
     // Add more blog posts as you create them
   ],
-  display: true // Set to false if you don't have a blog yet
+  display: false // Set to false if you don't have a blog yet
 };
 
 // Talks Sections
