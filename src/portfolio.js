@@ -194,7 +194,8 @@ const workExperiences = {
       company: "Straive",
       companylogo: require("./assets/images/quoraLogo.png"), // Using existing placeholder logo
       date: "September 2021 – November 2023",
-      desc: "Developed ML solutions for patent analysis and document processing",
+      desc:
+        "Developed ML solutions for patent analysis and document processing",
       descBullets: [
         "Built patent grouping pipeline using Transformers achieving 74% accuracy",
         "Created Flask API endpoints and deployed ML models with DevOps team",
@@ -321,6 +322,7 @@ const podcastSection = {
   title: emoji("Podcast 🎙️"),
   subtitle: "DISCUSSIONS ABOUT AI AND TECHNOLOGY",
 
+  // Please Provide with Your Podcast embeded Link
   podcast: [
     // Add podcast links here
   ],
