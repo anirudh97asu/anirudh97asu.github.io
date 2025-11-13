@@ -4,7 +4,8 @@ env:
   GITHUB_USERNAME: ${{ github.repository_owner }}
   REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
   USE_GITHUB_DATA: "true"
-  MEDIUM_USERNAME: "anirudh-s97" # Change this to your medium username (or remove if not using Medium)
+  MEDIUM_USERNAME: "" # Leave empty if you don't have Medium blogs
+  FETCH_MEDIUM: "false" # Disable Medium blog fetching
 on:
   workflow_dispatch:
   push:
@@ -15,6 +16,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3 # If you're using actions/checkout@v3 you must set persist-credentials to false in most cases for the deployment to work correctly.
@@ -34,6 +37,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is provided by GitHub.
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          token: ${{ secrets.GITHUB_TOKEN }} # Or use PERSONAL_TOKEN if you create one
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
