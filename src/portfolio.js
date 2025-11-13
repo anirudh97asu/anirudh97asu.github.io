@@ -127,7 +127,8 @@ const educationInfo = {
     {
       schoolName: "Arizona State University",
       logo: require("./assets/images/harvardLogo.png"), // Using existing placeholder logo
-      subHeader: "Master of Science in Robotics & Autonomous Systems (AI Focus)",
+      subHeader:
+        "Master of Science in Robotics & Autonomous Systems (AI Focus)",
       duration: "August 2024 - Present",
       desc: "Specialization in Artificial Intelligence",
       descBullets: [
@@ -179,7 +180,8 @@ const workExperiences = {
       company: "Rapid Acceleration Partners",
       companylogo: require("./assets/images/facebookLogo.png"), // Using existing placeholder logo
       date: "November 2023 – July 2024",
-      desc: "Built AI-powered solutions for enterprise clients using advanced ML and Generative AI",
+      desc:
+        "Built AI-powered solutions for enterprise clients using advanced ML and Generative AI",
       descBullets: [
         "Architected AI-powered check information extraction using YOLOv8 and Visual Language Models, achieving 80% accuracy and 50% manual effort reduction",
         "Developed RAG-based diagnostic system using Sentence Transformers and Chroma DB, reducing ticket resolution time by 20%",
@@ -206,7 +208,8 @@ const workExperiences = {
       company: "Straive",
       companylogo: require("./assets/images/airbnbLogo.png"), // Using existing placeholder logo
       date: "June 2021 – September 2021",
-      desc: "Supported data collection and synthetic data generation for Computer Vision projects",
+      desc:
+        "Supported data collection and synthetic data generation for Computer Vision projects",
       descBullets: [
         "Scraped 2,000+ restaurant images using Scrapy for Computer Vision POC",
         "Created synthetic form data using OpenCV and MNIST dataset, improving OCR accuracy by 3%",
